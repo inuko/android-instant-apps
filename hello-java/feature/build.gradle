@@ -45,6 +45,7 @@ android {
 
 dependencies {
     api "com.android.support:appcompat-v7:$supportLib"
+    api 'com.google.android.instantapps:instantapps:1.1.0'
     application project(':installed')
 
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"

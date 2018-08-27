@@ -19,12 +19,17 @@ package com.google.android.instantapps.samples.hello.feature;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+
+import com.google.android.instantapps.InstantApps;
 
 /**
  * This Activity displays a simple hello world text and a button to open the GoodbyeActivity.
  */
 public class HelloActivity extends AppCompatActivity {
+
+    private static final String LOG_TAG = HelloActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class HelloActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(LOG_TAG, "isInstantApps() : " + InstantApps.isInstantApp(getApplicationContext()));
                 startActivity(new Intent(HelloActivity.this, GoodbyeActivity.class));
             }
         });
